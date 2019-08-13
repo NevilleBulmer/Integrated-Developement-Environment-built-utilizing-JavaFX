@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ide.PreferencesScreenViewController">
+  <children>
+    <SplitPane dividerPositions="0.30120481927710846" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane maxWidth="150.0" minWidth="150.0" prefWidth="150.0">
+               <children>
+                  <Label fx:id="selectThemesView" layoutX="14.0" layoutY="14.0" text="Look and Feel" />
+                  <Label fx:id="selectLanguageView" layoutX="14.0" layoutY="38.0" text="Languages" />
+               </children></AnchorPane>
+      <AnchorPane id="Content" fx:id="displayTesting" minHeight="-1.0" minWidth="-1.0" />
+      </items>
+    </SplitPane>
+  </children>
+</VBox>

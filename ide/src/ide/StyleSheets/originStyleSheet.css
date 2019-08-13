@@ -1,0 +1,138 @@
+/* MENU BAR */
+/* VARIABLE DEFINITIONS: Only these 4 variables have to be adjusted, the rest is copy-paste */
+* {
+    -fx-my-menu-color: #3e4447;                  /* Change according to your needs */
+    -fx-my-menu-color-highlighted: #455a64;      /* Change according to your needs */
+    -fx-my-menu-font-color: #FFFFFF;             /* Change according to your needs */
+    -fx-my-menu-font-color-highlighted: #FFFFFF; /* Change according to your needs */
+}
+
+/* MENU BAR + Top-level MENU BUTTONS */
+/*** Context menu styling ***/
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-color: -fx-my-menu-color;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0 6 6 6, 0 5 5 5, 0 4 4 4;
+    -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em; /* 4 1 8 1 */
+}
+
+/*** The menu bar itself ***/    
+.menu-bar 
+{
+    -fx-background-color: -fx-my-menu-color;
+}
+
+/*** Top-level menu itself (not selected / hovered) ***/
+.menu-bar > .container > .menu-button 
+{
+    -fx-background-color: -fx-my-menu-color;
+}
+
+/*** Top-level menu's label (not selected / hovered) ***/
+.menu-bar > .container > .menu-button > .label 
+{
+    -fx-text-fill: -fx-my-menu-font-color;
+}
+
+/*** Top-level menu's label (disabled) ***/
+.menu-bar > .container > .menu-button > .label:disabled 
+{
+    -fx-opacity: 1.0;
+}
+
+/*** Top-level menu itself (selected / hovered) ***/
+.menu-bar > .container > .menu-button:hover,
+.menu-bar > .container > .menu-button:focused,
+.menu-bar > .container > .menu-button:showing 
+{
+    -fx-background-color: -fx-my-menu-color-highlighted;
+}
+
+/*** Top-level menu's label (selected / hovered) ***/
+.menu-bar > .container > .menu-button:hover > .label,
+.menu-bar > .container > .menu-button:focused > .label,
+.menu-bar > .container > .menu-button:showing > .label 
+{
+    -fx-text-fill: -fx-my-menu-font-color-highlighted;
+}
+
+/* MENU ITEM (children of a MENU BUTTON) */
+/*** The item itself (not hovered / focused) ***/    
+.menu-item
+{
+    -fx-background-color: -fx-my-menu-color; 
+}
+
+/*** The item's label (not hovered / focused) ***/   
+.menu-item .label 
+{
+    -fx-text-fill: -fx-my-menu-font-color;
+}
+
+/*** The item's label (disabled) ***/   
+.menu-item .label:disabled 
+{
+    -fx-opacity: 1.0;
+}    
+
+/*** The item itself (hovered / focused) ***/    
+.menu-item:focused, .menu-item:hovered
+{
+    -fx-background-color: -fx-my-menu-color-highlighted; 
+}
+
+/*** The item's label (hovered / focused) ***/  
+.menu-item:focused .label, .menu-item:hovered .label 
+{
+    -fx-text-fill: -fx-my-menu-font-color-highlighted;
+}
+
+/* CodeArea Styling */
+.keyword
+{
+    -fx-fill: purple;
+    -fx-font-weight: bold;
+}
+.semicolon 
+{
+    -fx-font-weight: bold;
+}
+.paren 
+{
+    -fx-fill: firebrick;
+    -fx-font-weight: bold;
+}
+.bracket 
+{
+    -fx-fill: darkgreen;
+    -fx-font-weight: bold;
+}
+.brace 
+{
+    -fx-fill: teal;
+    -fx-font-weight: bold;
+}
+.string 
+{
+    -fx-fill: blue;
+}
+
+.comment 
+{
+	-fx-fill: cadetblue;
+}
+
+.paragraph-box:has-caret
+{
+    -fx-background-color: #f2f9fc;
+}
+
+/*  */
+
+/* ABOUT VIEW */
+#aboutViewTextArea { -fx-text-alignment: center; }
+
+/*  */
+
+/*  */

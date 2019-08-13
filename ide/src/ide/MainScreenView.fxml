@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ide.MainScreenViewController">
+   <children>
+      <BorderPane fx:id="rootViewWindow" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <VBox prefHeight="53.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+               <children>
+                <MenuBar>
+                  <menus>
+                    <Menu mnemonicParsing="false" styleClass="optionsStyling" text="File">
+                      <items>
+                        <MenuItem fx:id="handleMakeNewFile" mnemonicParsing="false" text="New File" />
+                        <MenuItem fx:id="handleOpenFile" mnemonicParsing="false" text="Open File…" />
+                              <MenuItem fx:id="handleOpenFolder" mnemonicParsing="false" text="Open Folder…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="handleCloseFile" mnemonicParsing="false" text="Close" />
+                        <MenuItem fx:id="handleSaveFile" mnemonicParsing="false" text="Save     ctrl-s" />
+                        <MenuItem fx:id="handleSaveAs" mnemonicParsing="false" text="Save As…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="handlePreferences" mnemonicParsing="false" text="Preferences…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="handleQuit" mnemonicParsing="false" text="Quit" />
+                      </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" styleClass="optionsStyling" text="Edit">
+                      <items>
+                        <MenuItem fx:id="handleUndo" mnemonicParsing="false" text="Undo" />
+                        <MenuItem fx:id="handleRedo" mnemonicParsing="false" text="Redo" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="handleCut" mnemonicParsing="false" text="Cut     ctrl-x" />
+                        <MenuItem fx:id="handleCopy" mnemonicParsing="false" text="Copy     ctrl-c" />
+                        <MenuItem fx:id="handlePaste" mnemonicParsing="false" text="Paste     ctrl-v" />
+                              <MenuItem fx:id="handleFind" mnemonicParsing="false" text="Find" />
+                        <MenuItem fx:id="handleDelete" mnemonicParsing="false" text="Delete" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="handleSelectAll" mnemonicParsing="false" text="Select-All     ctrl-a" />
+                        <MenuItem fx:id="handleUnselectAll" mnemonicParsing="false" text="Unselect-All     ctrl-a" />
+                      </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" styleClass="optionsStyling" text="Project">
+                      <items>
+                        <MenuItem fx:id="runCurrentFile" mnemonicParsing="false" text="Run" />
+                              <MenuItem fx:id="compileCurrentFile" mnemonicParsing="false" text="Compile" />
+                      </items>
+                    </Menu>
+                        <Menu mnemonicParsing="false" styleClass="optionsStyling" text="Help">
+                           <items>
+                              <MenuItem fx:id="handleThemes" mnemonicParsing="false" text="Themes" />
+                              <MenuItem fx:id="handleAbout" mnemonicParsing="false" text="About" />
+                           </items>
+                        </Menu>
+                  </menus>
+                </MenuBar>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <MenuButton layoutX="3.0" layoutY="3.0" maxHeight="20.0" minHeight="20.0" mnemonicParsing="false" prefHeight="20.0" text="Syntax Selection" AnchorPane.leftAnchor="3.0">
+                          <items>
+                            <MenuItem fx:id="selectJavaSyntax" mnemonicParsing="false" text="Java" />
+                            <MenuItem fx:id="selectFXMLSyntax" mnemonicParsing="false" text="FXML" />
+                              <MenuItem fx:id="selectHTMLSyntax" mnemonicParsing="false" text="HTML" />
+                              <MenuItem fx:id="selectCSSSyntax" mnemonicParsing="false" text="CSS" />
+                              <MenuItem fx:id="selectPHPSyntax" mnemonicParsing="false" text="PHP" />
+                              <MenuItem fx:id="selectJavaScriptSyntax" mnemonicParsing="false" text="JavaScript" />
+                              <MenuItem fx:id="selectCSyntax" mnemonicParsing="false" text="C" />
+                              <MenuItem fx:id="selectCPPSyntax" mnemonicParsing="false" text="Cpp" />
+                              <MenuItem fx:id="selectCSSyntax" mnemonicParsing="false" text="C#" />
+                              <MenuItem fx:id="selectPySyntax" mnemonicParsing="false" text="py" />
+                          </items>
+                           <padding>
+                              <Insets top="-3.0" />
+                           </padding>
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </MenuButton>
+                        <ImageView fx:id="playSourceImage" fitHeight="20.0" fitWidth="20.0" layoutX="127.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Assets/play.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="compileSourceImage" fitHeight="20.0" fitWidth="20.0" layoutX="152.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Assets/compile.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="findTextField" layoutX="177.0" layoutY="2.0" maxHeight="20.0" minHeight="20.0" prefHeight="20.0">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </TextField>
+                        <AnchorPane layoutX="331.0" layoutY="3.0" prefHeight="22.0" AnchorPane.rightAnchor="3.0">
+                           <children>
+                              <ImageView fx:id="toggleRightPaneSelectorImage" fitHeight="20.0" fitWidth="20.0" layoutX="646.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Assets/rightWindowSelector.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="toggleBottomPaneSelectorImage" fitHeight="20.0" fitWidth="20.0" layoutX="621.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Assets/bottomWindowSelector.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="toggleLeftPaneSelectorImage" fitHeight="20.0" fitWidth="20.0" layoutX="594.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Assets/leftWindowSelector.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <BorderPane fx:id="testBorderPane" BorderPane.alignment="CENTER">
+               <center>
+              <ScrollPane fx:id="mainEditorContainer" styleClass="mainCodeView">
+                <content>
+                  <AnchorPane id="Content" fx:id="mainEditorViewWindow" minHeight="-1.0" minWidth="-1.0" />
+                </content>
+              </ScrollPane>
+               </center>
+               <bottom>
+                  <ScrollPane fx:id="terminalEditorContainer" maxHeight="100.0" minHeight="100.0" prefHeight="100.0" prefWidth="728.0" BorderPane.alignment="CENTER">
+                     <content>
+                        <AnchorPane fx:id="terminalViewWindow" />
+                     </content>
+                  </ScrollPane>
+               </bottom>
+            </BorderPane>
+         </center>
+         <left>
+        <AnchorPane fx:id="fileViewWindow" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+        <AnchorPane fx:id="webContainer" prefHeight="531.0" prefWidth="272.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="-39.0" prefHeight="43.0" prefWidth="228.0" AnchorPane.bottomAnchor="488.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextField fx:id="userSearchTextField" layoutX="5.0" maxHeight="20.0" minHeight="20.0" prefHeight="20.0">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fx:id="searchTermQuerieInitiator" fitHeight="25.0" fitWidth="25.0" layoutX="178.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Assets/search.png" />
+                           </image>
+                        </ImageView>
+                        <Hyperlink fx:id="searchTargetSelectorGoogle" layoutX="7.0" layoutY="21.0" text="Google">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Hyperlink>
+                        <Hyperlink fx:id="searchTargetSelectorStack" layoutX="62.0" layoutY="21.0" text="StackOverflow">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Hyperlink>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="151.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Assets/back.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="166.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Assets/foreward.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <WebView fx:id="webViewWindow" layoutY="44.0" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="44.0" />
+               </children></AnchorPane>
+         </right>
+         <bottom>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox id="HBox" alignment="CENTER_LEFT" maxHeight="15.0" minHeight="15.0" prefHeight="15.0" spacing="5.0">
+                     <children>
+                        <Label fx:id="checkTextWrap" text="Text wrap |">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="textWrapStatus" text="Off">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <Pane prefHeight="-1.0" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="fileType">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="caretPosition" maxWidth="-1.0" HBox.hgrow="NEVER">
+                           <font>
+                              <Font size="11.0" fx:id="x31" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ide.AboutScreenViewController">
+   <children>
+      <AnchorPane prefHeight="624.0" prefWidth="500.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="173.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Assets/Logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="211.0" layoutY="183.0" text="StarLight IDE" />
+            <TextArea id="aboutViewTextArea" fx:id="informationSection" editable="false" layoutX="151.0" layoutY="207.0" prefHeight="78.0" prefWidth="200.0" text="Built with love by&#10;Neville Bulmer&#10;&#10;All right reserved" wrapText="true">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></TextArea>
+            <Hyperlink fx:id="facebookLink" layoutX="151.0" layoutY="294.0" text="Facebook" />
+            <Hyperlink fx:id="twitterLink" layoutX="233.0" layoutY="294.0" text="Twitter" />
+            <Hyperlink fx:id="githubLink" layoutX="299.0" layoutY="294.0" text="Github" />
+            <Hyperlink fx:id="websiteLink" layoutX="220.0" layoutY="338.0" text="Website" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

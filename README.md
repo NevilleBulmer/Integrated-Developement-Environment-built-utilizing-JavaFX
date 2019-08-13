@@ -14,4 +14,4 @@ Incorporate syntax highlighting for most if not all programming languages.
 Implement compilations and interpreters for most if not all programming languages.
 
 ### Other
-With this IDE utilizing RichTextFX, ControlsFX there is a dependancies folder which will include everything needed to get up and running with the project.
+With this IDE utilizing RichTextFX, ControlsFX there is a dependencies  folder which will include everything needed to get up and running with the project.

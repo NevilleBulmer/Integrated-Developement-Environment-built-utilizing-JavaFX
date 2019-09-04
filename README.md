@@ -48,3 +48,6 @@ Implement compilations and interpreters for most if not all programming language
 
 ### Other
 With this IDE utilizing RichTextFX, ControlsFX there is a dependencies  folder which will include everything needed to get up and running with the project.
+
+### Checklist of thing to complete
+Coming soon
